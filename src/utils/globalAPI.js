@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export function getMovieList(search) {
-    const params = search === '' ? 'all' : search;
+    const params = (search === '' || search === null) ? 'all' : search;
     const url = `http://www.omdbapi.com/?s=${params}&apikey=faf7e5bb`;
     return axios
         .get(url)
